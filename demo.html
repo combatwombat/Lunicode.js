@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Lunicode.js Demo</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+		<script type="text/javascript" src="lunicode.js"></script>
+		
+
+		<style type="text/css" media="screen">
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+			}
+		</style>	
+		
+		<script type="text/javascript">
+			$(function() {
+				
+				// Get the Lunicode object, initializing the effects
+				var luni = new Lunicode();
+				
+				// jQuery is not required, i'm just lazy.
+				$('.demo').each(function() {
+					$this = $(this);
+					var effectName = $this.attr('id').split("_")[1]; // flip, mirror, ...					
+					var $p = $('p', $this);
+					
+					// Encode the text
+					var encodedText = luni.tools[effectName].encode($p.text());
+					
+					/* Special options for creepify:
+					luni.tools.creepify.options.top = true; 	// add diacritics on top. Default: true 
+			        luni.tools.creepify.options.middle = true;	// add diacritics in the middle. Default: true 
+			        luni.tools.creepify.options.bottom = true;	// add diacritics on the bottom. Default: true
+			        luni.tools.creepify.options.maxHeight = 15; // How many diacritic marks shall we put on top/bottom? Default: 15
+			        luni.tools.creepify.options.randomization: 100 // 0-100%. maxHeight 100 and randomization 20%: the height goes from 80 to 100. randomization 70%, height goes from 30 to 100. Default: 100
+					*/
+					
+					// Replace the text with the encoded version
+					$p.text(encodedText);
+					
+					// To convert the text to HTML entities, use luni.getHTML(text):
+					$p.html(luni.getHTML(encodedText));
+					
+					// To decode text back to ascii, use the decode method:
+					// var plainText = luni.tools[effectName].decode(encodedText);
+					
+					
+				});
+				
+			});			
+		</script>
+	</head>
+	<body>
+		<h1>Lunicode.js Demo</h1>
+		<p>For a nicer interactive demo go to <a href="http://lunicode.com">lunicode.com</a>.</p>
+		<p>
+			If it looks weird and boxy, you need a Unicode font:
+		</p>
+		<ul>
+			<li><a target="_blank" href="http://dejavu-fonts.org/wiki/Main_Page">DejaVu Sans</a></li>
+			<li><a target="_blank" href="http://www.fonts2u.com/code2000.font">Code2000</a></li>
+			<li><a target="_blank" href="http://www.lgm.cl/trabajos/unifont/index.en.html">GNU Unifont</a></li>
+			<li><a target="_blank" href="http://web.nickshanks.com/fonts/kannada/">Kedage</a></li>
+		</ul>
+		
+		
+		<div class="demo" id="demo_flip">
+			<h2>Flip</h2>
+			<p>Flips/Rotates text, including numbers (12345) and some special characters: äöü éáú ÄÖÜ ß ô</p>
+		</div>
+		
+		<div class="demo" id="demo_mirror">
+			<h2>Mirror</h2>
+			<p>Mirrors text horizontally. äöü ß èàù. Käseküchlein.</p>
+		</div>
+		
+		<div class="demo" id="demo_creepify">
+			<h2>Creepify</h2>
+			<p>Adds
+				diacritics</p>
+		</div>
+		
+		<div class="demo" id="demo_bubbles">
+			<h2>Bubbles</h2>
+			<p>Bubbles around normal characters. Uses combining characters for everything else.</p>
+		</div>
+		
+		<div class="demo" id="demo_squares">
+			<h2>Squares</h2>
+			<p>Squares, via combining characters.</p>
+		</div>
+		
+		<div class="demo" id="demo_roundsquares">
+			<h2>Round Squares</h2>
+			<p>Round squares, via combining characters.</p>
+		</div>
+		
+		<div class="demo" id="demo_bent">
+			<h2>Bent</h2>
+			<p>Wonky alternatives to the usual characters.</p>
+		</div>
+		
+		<div class="demo" id="demo_tiny">
+			<h2>Tiny</h2>
+			<p>Tiny Capitals.</p>
+		</div>
+		
+		<p style="margin-top: 100px"><a href="https://github.com/combatwombat/Lunicode.js">Lunicode.js on GitHub</a></p>
+		<p>Copyright &copy; 2012 Robert Gerlach - <a href="http://robsite.net">robsite.net</a></p>
+		
+	</body>
+</html>
