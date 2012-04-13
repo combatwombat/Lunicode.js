@@ -106,5 +106,4 @@ Tiny Capitals.
 	<li><a href="http://blogs.msdn.com/b/michkap/archive/2006/02/17/533929.aspx">Michael Kaplan's "What do you get when you combine a base character with a buttload of diacritics?"</a> - Idea for creepify</li>
 	<li><a href="http://unicodeemoticons.com/">Unicode emoticons</a>, <a href="http://www.planetminecraft.com/blog/collection-of-unicode-faces/">Collection of unicode faces</a> and <a href="https://gist.github.com/157796">Unicode smileys</a></li>					
 	<li><a href="http://funicode.com">funicode.com</a> - Idea and lower case characters for Bent</li>
-	<li><a href="https://github.com/balupton/History.js/">History.js</a> - Easy, cross-browser HTML5 URL-rewriting</li>
 </ul>
