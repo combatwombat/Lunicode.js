@@ -1,8 +1,10 @@
+// Lunicode.js
+// from lunicode.com
+// on GitHub: https://github.com/combatwombat/Lunicode.js
+// Copyright © 2012 Robert Gerlach - robsite.net
 function Lunicode() {
   
   this.tools = {
-  
-  
   
     // Flip/rotate Text by 180°
     
@@ -166,10 +168,7 @@ function Lunicode() {
       }
     },
     
-    
-    
-    
-    
+       
     
     
     // Mirror text (flip horizontally)
@@ -425,9 +424,6 @@ function Lunicode() {
 
           }
           
-
-          
-          
           
           newText += newChar;
         }
@@ -541,7 +537,6 @@ function Lunicode() {
       map: {},
       mapInverse: {}
     },
-    
     
     
     
@@ -774,6 +769,8 @@ function Lunicode() {
       }
     },
     
+    
+    // Tiny Capitals
     tiny: {
       init: function() {
 
@@ -923,5 +920,4 @@ function Lunicode() {
     
     return html;
   }  
-
 }
