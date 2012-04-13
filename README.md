@@ -1,3 +1,5 @@
+# Lunicode.js
+
 A JavaScript Library to convert text in various useless but funny ways.
 
 For a interactive demo go to [lunicode.com](http://lunicode.com).
