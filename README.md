@@ -1,6 +1,7 @@
 # Lunicode.js
 
-A JavaScript Library to convert text in various useless but funny ways.
+A JavaScript Library to convert text in various useless but funny ways.  
+&#x2d9;&#x73;&#x28e;&#x250;&#x28d; &#x28e;&#x75;&#x75;&#x6e;&#x25f; &#x287;&#x6e;&#x71; &#x73;&#x73;&#x1dd;&#x6c;&#x1dd;&#x73;&#x6e; &#x73;&#x6e;&#x6f;&#x131;&#x279;&#x250;&#x28c; &#x75;&#x131; &#x287;&#x78;&#x1dd;&#x287; &#x287;&#x279;&#x1dd;&#x28c;&#x75;&#x6f;&#x254; &#x6f;&#x287; &#x28e;&#x279;&#x250;&#x279;&#x71;&#x131;&#x2e5; &#x287;&#x64;&#x131;&#x279;&#x254;&#x53;&#x250;&#x28c;&#x250;&#x17f; &#x2200;
 
 For a interactive demo go to [lunicode.com](http://lunicode.com).
 
