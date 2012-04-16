@@ -19,21 +19,37 @@ function Lunicode() {
       },
       
       encode: function(text) {
-        var ret = '',
+        var ret = [],
             ch;
         
         for (var i = 0, len = text.length; i < len; i++) {
-          ch = this.map[text.charAt(i)];
-          if (typeof(ch) == "undefined") {
-            ch = text.charAt(i);
+          ch = text.charAt(i);
+          
+          // combining diacritical marks: combine with previous character for ä,ö,ü,...
+          if (i > 0 && (ch == '\u0324' ||
+                        ch == '\u0317' ||
+                        ch == '\u0316' ||
+                        ch == '\u032e')) {
+            ch = this.map[text.charAt(i-1) + ch];
+            ret.pop();             
+                          
+          } else {
+            ch = this.map[ch];
+            if (typeof(ch) == "undefined") {
+              ch = text.charAt(i);
+            }
           }
-          ret = ch + ret;
+          
+          ret.push(ch); 
+          
+
 
         }    
 
-        return ret;
+        return ret.reverse().join("");
       },
       
+      // same as encode(), for now...
       decode: function(text) {
         var ret = [],
             ch;
@@ -48,8 +64,9 @@ function Lunicode() {
                         ch == '\u032e')) {
             ch = this.map[text.charAt(i-1) + ch];
             ret.pop();
+            
           } else {
-            ch = this.map[text.charAt(i)];
+            ch = this.map[ch];
             if (typeof(ch) == "undefined") {
               ch = text.charAt(i);
             }
@@ -119,7 +136,8 @@ function Lunicode() {
           '!' : '\u00A1',
           "\'" : ',',
           '<' : '>',
-          '_' : '\u203E',
+          '\u203E' : '_',
+          '\u00AF' : '_',
           '\u203F' : '\u2040',
           '\u2045' : '\u2046',
           '\u2234' : '\u2235',
@@ -183,25 +201,38 @@ function Lunicode() {
       },
       
       encode: function(text) {
-        var ret = '',
+        var ret = [],
             ch,
             newLines = [];
         
         for (var i = 0, len = text.length; i < len; i++) {
-          ch = this.map[text.charAt(i)];
-          if (typeof(ch) == "undefined") {
-            ch = text.charAt(i);
+          ch = text.charAt(i);
+          
+          // combining diacritical marks: combine with previous character for ä,ö,ü,...
+          if (i > 0 && (ch == '\u0308' ||
+                        ch == '\u0300' ||
+                        ch == '\u0301' ||
+                        ch == '\u0302')) {
+            ch = this.map[text.charAt(i-1) + ch];
+            ret.pop();
+          } else {
+            ch = this.map[ch];
+            if (typeof(ch) == "undefined") {
+              ch = text.charAt(i);
+            }
           }
           
+          
           if (ch == '\n') {
-            newLines.push(ret);
-            ret = '';
+            newLines.push(ret.reverse().join(""));
+            ret = [];
           } else {
-            ret = ch + ret;
-          }     
+            ret.push(ch);
+          }
+          
+  
         }    
-        newLines.push(ret);
-
+        newLines.push(ret.reverse().join(""));
         return newLines.join("\n");
       },
       
@@ -221,7 +252,7 @@ function Lunicode() {
             ch = this.map[text.charAt(i-1) + ch];
             ret.pop();
           } else {
-            ch = this.map[text.charAt(i)];
+            ch = this.map[ch];
             if (typeof(ch) == "undefined") {
               ch = text.charAt(i);
             }
