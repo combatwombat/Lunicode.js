@@ -30,7 +30,7 @@ Use it like this:
     luni.tools.creepify.options.middle = true;	// add diacritics in the middle. Default: true 
     luni.tools.creepify.options.bottom = true;	// add diacritics on the bottom. Default: true
     luni.tools.creepify.options.maxHeight = 15; // How many diacritic marks shall we put on top/bottom? Default: 15
-    luni.tools.creepify.options.randomization = 100 // 0-100%. maxHeight 100 and randomization 20%: the height goes from 80 to 100. randomization 70%: height goes from 30 to 100. Default: 100
+    luni.tools.creepify.options.randomization = 100; // 0-100%. maxHeight 100 and randomization 20%: the height goes from 80 to 100. randomization 70%: height goes from 30 to 100. Default: 100
     
     // To convert Unicode text to HTML, use luni.getHTML(text);
     // Also converts \n to <br>\n and multiple spaces to &nbsp; &nbsp; &nbsp; ...
