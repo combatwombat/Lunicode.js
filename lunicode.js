@@ -1,9 +1,6 @@
-// Lunicode.js
-// from lunicode.com
-// on GitHub: https://github.com/combatwombat/Lunicode.js
-// Copyright Â© 2012 Robert Gerlach - robsite.net
+module.exports = new Lunicode();
+
 function Lunicode() {
-  
   this.tools = {
   
     // Flip/rotate Text by 180Â°
@@ -749,14 +746,14 @@ function Lunicode() {
           'Y' : 'Ó‹',
           'Z' : 'É€',
           '0' : 'âŠ˜',
-          '1' : 'í µí¿™',
+          '1' : 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
           '2' : 'Ï©',
           '3' : 'Ó ',
           '4' : 'à¥«',
           '5' : 'Æ¼',
           '6' : 'Ï¬',
           '7' : '7',
-          '8' : 'í µí¿ ',
+          '8' : 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
           '9' : 'à¥¯',
           '&' : 'â…‹',
           '(' : '{',
