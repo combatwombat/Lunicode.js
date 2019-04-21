@@ -1,5 +1,4 @@
 module.exports = new Lunicode();
-
 function Lunicode() {
   this.tools = {
   
