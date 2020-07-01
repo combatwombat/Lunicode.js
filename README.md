@@ -19,6 +19,9 @@ Use it like this:
     // Get the Lunicode object, initializing the effects
     var luni = new Lunicode();
     
+    // Or if you installed lunicode via npm:
+    var luni = require("Lunicode");
+    
 	// Encode text. Use one of the effects shown below. Here it's "flip"
     var encodedText = luni.tools.flip.encode("Hello World");  // plɹoM ollǝH
     
